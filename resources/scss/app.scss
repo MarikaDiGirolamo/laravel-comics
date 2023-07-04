@@ -1,6 +1,7 @@
 /* importo bootstrap dalla cartella node_modules usando l'alias settato in vite.config.js */
 @import "~bootstrap/scss/bootstrap";
-
+@import "~resources/scss/partials/_mixins.scss";
+@import "~resources/scss/partials/_variables.scss";
 * {
     margin: 0;
     padding: 0;
@@ -19,10 +20,19 @@ body {
 header,
 footer {
     width: 100%;
-    background: #EEE;
-    color: black;
+    background: $main_color;
+    color: white;
 }
 
 header img.logo {
     height: 2rem;
+}
+
+img.comicCover{
+    width: 4em;
+}
+
+header a{
+    color: white;
+    text-decoration: none;
 }

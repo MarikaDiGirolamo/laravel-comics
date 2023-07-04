@@ -1,12 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
+@include('partials.jumbotron')
 <div class="container my-3">
     <h1>Welcome Page</h1>
     <div class="row g-4">
         <div class="col">
             <div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, delectus ad esse illum omnis earum eligendi sint a minus quasi, inventore nulla autem. Maxime voluptatem eligendi veniam voluptates. Soluta, sunt!</p>
+                <img src="{{ Vite::asset('resources/img/adv.png') }}" alt="">
+                @foreach ($comics as $comic)
+                <div>
+                    {{$comic["title"] }}
+                    <img class="comicCover" src="{{$comic["thumb"]}}" alt="{{$comic["title"]}}"/>
+                    @foreach ($comic["artists"] as $artist)
+                    <li>{{$artist}}</li>
+                    @endforeach
+                    
+
+
+                </div>
+                    
+                @endforeach
             </div>
         </div>
     </div>
